@@ -1,0 +1,38 @@
+#get-loan-icon .anticon .anticon-appstore {
+  font-size: 50px !important;
+}
+
+.ant-tabs-tab .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #E87C23 !important;
+}
+
+.get-loan-container {
+  /* display: block; */
+  /* width: 50%; */
+  height: 100%; 
+  /* float: right; */
+}
+
+.dollar {
+  font-size: 40px;
+}
+
+.card-body p {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.get-loan-button {
+  display: none !important;
+}
+
+@media only screen and (max-width: 490px) {
+  .get-loan-container {
+    display: none !important;
+  }
+
+  .get-loan-button {
+    display: block;
+  }
+ 
+}

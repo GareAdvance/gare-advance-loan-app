@@ -1,0 +1,30 @@
+.header {
+  background: #F5F5F5 !important;
+  opacity: 1;
+  height: 100px !important;
+  /* padding: 15px; */
+  padding: 25px;
+}
+
+.brand-name {
+  margin-left: 7px;
+}
+
+.username {
+  margin: 15px;
+}
+
+.logout {
+  display: none;
+}
+
+.username:hover .logout {
+  display: block;
+  position: absolute; 
+  left: 90px;
+  top: 30px;
+  cursor: pointer;
+
+  /* background-color: coral; */
+  padding: 5px;
+}

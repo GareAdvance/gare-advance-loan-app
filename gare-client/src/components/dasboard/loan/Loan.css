@@ -1,0 +1,241 @@
+.ant-tooltip-inner {
+  color: #000 !important;
+  background-color: #fff !important;
+  width: 800px !important;
+  border-radius: 0px 23px 23px 0px;
+  box-shadow: none;
+}
+ 
+.ant-tooltip-arrow .ant-tooltip-arrow-content{
+  background: #fff;
+}
+
+.salaryText button {
+  float: right;
+  background: #8625CF;
+  color: #fff;
+  width: 25%;
+  height: 50px;
+  border-radius: 12px;
+}
+
+.businessText button {
+  float: right;
+  background: #0B67DF;
+  color: #fff;
+  width: 25%;
+  height: 50px;
+  border-radius: 12px;
+}
+
+.modal {
+  margin-top: 7%;
+}
+
+.personalText button {
+  float: right;
+  background: #E87C23;
+  color: #fff;
+  width: 25%;
+  height: 50px;
+  border-radius: 12px;
+}
+
+#loan-card {
+  background: #fff;
+  color: #E87C23;
+  border-radius: 23px 23px 23px 0px; 
+  opacity: 1;
+  height: 145px;
+  padding-top: 15px;
+}
+
+#loan-card .anticon {
+  font-size: 40px;
+} 
+
+#loan-card:hover {
+  background: #E87C23;
+  color: #FFF;
+  border-radius: 23px 23px 23px 0px; 
+  opacity: 1;
+  height: 145px;
+  padding-top: 15px;
+}
+
+.loan-submit-button {
+  height: 60px;
+  background: var(--unnamed-color-0b70a5) 0% 0% no-repeat padding-box;
+  background: #0B70A5 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+  color: #fff;
+}
+
+.loan-cancel-button {
+  height: 60px;
+  background: transparent;
+  color: #E87C23;
+  border-radius: 12px;
+  border: none;
+  opacity: 1;
+}
+
+.calculator {
+  margin-left: 150px;
+}
+
+.remittance {
+  font: var(--unnamed-font-style-normal) normal bold 40px/45px var(--unnamed-font-family-gilroy-☞);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: center;
+  font: normal normal bold 40px/45px Gilroy ☞;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.tenure-text {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 18px/21px var(--unnamed-font-family-gilroy-☞);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-0b70a5);
+  text-align: center;
+  font: normal normal medium 18px/21px Gilroy ☞;
+  letter-spacing: 0px;
+  color: #0B70A5;
+  opacity: 1;
+}
+
+.top-text {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 18px/21px var(--unnamed-font-family-gilroy-☞);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: center;
+  font: normal normal medium 18px/21px Gilroy ☞;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+#salaryloan-card:hover {
+  background: #8625CF;
+  color: #FFF;
+  border-radius: 23px 23px 23px 0px; 
+  opacity: 1;
+  height: 145px;
+  padding-top: 15px;
+}
+
+#salaryloan-card {
+  background: #fff;
+  color: #8625CF;
+  border-radius: 23px 23px 23px 0px; 
+  opacity: 1;
+  height: 145px;
+  padding-top: 15px;
+}
+
+#salaryloan-card .anticon {
+  font-size: 40px;
+}
+
+/* style={{  }}  */
+
+#businessloan-card:hover  {
+  background: #0B67DF;
+  color: #FFF;
+  border-radius: 23px 23px 23px 0px; 
+  opacity: 1;
+  height: 145px;
+  padding-top: 15px;
+}
+
+#businessloan-card {
+  background: #fff;
+  color: #0B67DF;
+  border-radius: 23px 23px 23px 0px; 
+  opacity: 1;
+  height: 145px;
+  padding-top: 15px;
+}
+
+#businessloan-card .anticon { font-size: 40px; }
+
+.ant-slider-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  background-color: #fff;
+  border: 2px solid #E87C23;
+  border-radius: 50%;
+}
+
+.ant-slider-handle:hover {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  background-color: #fff;
+  border: 2px solid #E87C23;
+  border-radius: 50%;
+}
+
+.ant-slider-handle:focus {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  background-color: #fff;
+  border: 2px solid #E87C23;
+  border-radius: 50%;
+}
+
+.ant-slider-step {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+
+.ant-slider-step {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+.ant-slider-step:focus {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #E87C23;
+}
+
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  background-color: #fff;
+  border: 2px solid #E87C23;
+}
+
+.ant-slider-track {
+  background: #E87C23;
+}
+
+/* .get-loan {
+  /* margin-left: 150px; */
+/* }  */
+
+@media only screen and (max-width: 490px) {
+  .calculator {
+    margin-left: 0px;
+    width: 150px !important;
+  }
+
+  .get-loan {
+    margin-left: 0px;
+  }
+}

@@ -1,0 +1,71 @@
+
+.ant-picker {
+  border: none;
+}
+
+.personalinfo {
+  padding: 20px;
+  width: 479px;
+}
+
+.modal {
+  top: -80px !important;
+}
+
+.file-uploader {
+  border: 2px dotted #0B70A5;
+  background: #0B70A50F;
+  height: 92px;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.file-uploader .ri-folder-reduce-fill {
+  color:  #0B70A5;
+}
+
+.discard-button {
+  background: transparent;
+  opacity: 1;
+  color: #E87C23;
+  width: 100%;
+  height: 60px !important;
+  border: none;
+}
+
+.personal-info-button {
+  background: #0B70A5;
+  opacity: 1;
+  color: #fff;
+  width: 100%;
+  height: 60px !important;
+  border-radius: 12px !important;
+}
+
+.heading {
+  font-size: 34px;
+  margin-top: 0px !important;
+}
+
+.personal-p {
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+
+input {
+  background: #F3F3F38C !important;
+  border: 2px solid #70707061;
+  border-radius: 12px;
+}
+
+select {
+  background: #F3F3F38C !important;
+  border: 2px solid #70707061;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 490px) {
+  #e-caddress, #e-position, #e-cname, #e-type, #e-baddress {
+    width: 295px!important;
+  }
+}

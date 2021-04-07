@@ -1,0 +1,164 @@
+
+.ant-layout {
+  min-height: 89vh !important;
+  padding-right: 20px;
+  background: #F5F5F5 !important;
+  opacity: 1;
+  
+}
+
+.ant-layout container {
+  margin: 0 !important;
+}
+
+.content {
+  background: #fff;
+  border-radius: 43px 0px 0px 43px;
+  opacity: 1;
+  width: 60% !important;
+  padding: 40px;
+}
+
+.side-tab {
+  background: #D8E7EF8F 0% 0% no-repeat padding-box;
+  border-radius: 0px 43px 43px 0px;
+  opacity: 1;
+  width: 24%;
+  padding: 40px;
+}
+
+.main-container {
+  min-width: 91%;
+  display: flex;
+  overflow: hidden;
+  padding-right: 150px;
+  padding-bottom: 100px;
+}
+
+.card {
+  background: #F6F6F6 0% 0% no-repeat padding-box;
+  border-radius: 13px 13px 13px 0px;
+  opacity: 1;
+  margin-bottom: 10px;
+  border: none;
+}
+
+#profile-status {
+  background: #E87C23 !important;
+  border-radius: 17px 17px 17px 0px !important;
+  opacity: 1;
+  color: #fff;
+  padding: 10px;
+}
+
+#profile-status button {
+  color: #E87C23;
+  width: 100%;
+  height: 46px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  opacity: 1;
+}
+
+#profile-status .complete {
+  text-align: left;
+  letter-spacing: 0px;
+  color: #FFFFFF8C;
+  opacity: 1;
+}
+
+#profile-status p {
+  margin-left: 10px;
+  /* position: fixed; */
+}
+
+.ant-progress {
+  /* -webkit-box-sizing: border-box; */
+  /* box-sizing: border-box; */
+  background: rgba(239, 239, 239, 0.2);
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 14px;
+  border: none;
+  opacity: 1;
+}
+
+.ant-progress-circle .ant-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1;
+  white-space: normal;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
+  stroke: #00ff00;
+}
+
+.hamburger-container {
+  display: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+@media only screen and (max-width: 490px) {
+  .sidebar-component {
+    display: none;
+  }
+
+  .hamburger-container{
+    display: block;
+  }
+
+  .content {
+    background: #EBEBEB;
+    border-radius: 30px 30px 30px 30px;
+    opacity: 1;
+    padding: 20px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .main-container {
+    min-width: 100%;
+    /* display: flex; */
+    min-height: 90vh;
+    /* padding-right: 0px !important; */
+    padding: 20px !important;
+  }
+
+  .ant-layout {
+    min-height: 90vh;
+    padding-right: 0px !important;
+    background: #F5F5F5 !important;
+    opacity: 1;
+    /* padding: 20px; */
+  }
+
+  .side-tab {
+    background: #D8E7EF8F;
+    border-radius: 30px 30px 30px 30px;
+    opacity: 1;
+    width: 24%;
+    padding: 20px;
+  }
+
+  .web-header {
+    display: none !important;
+  }
+
+  .mobile-header {
+    display: block !important;
+  }
+  
+}

@@ -1,0 +1,66 @@
+.profile-div {
+  display: flex;
+}
+
+.profile-detail {
+  margin-top: -60px;
+}
+
+.change-email {
+  padding: 80px !important;
+}
+
+.modal-content .modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 0px !important;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+#profile-picture-input {
+  border: none !important;
+  height: 26px !important;
+  background: #00000036 !important;
+  border-radius: 13px;
+  opacity: 1;
+  width: 80px;
+  position: absolute;
+  top: 100px !important;
+  left: 45px;
+}
+
+#profile-avatar {
+  margin-bottom: 100px;
+}
+
+.add-button {
+  background: #0B70A524; 
+  color: #0B70A5; 
+  width: 57px; 
+  height: 26px;
+  border-radius: 13px;
+}
+
+@media only screen and (max-width: 490px) {
+  .profile-detail {
+    margin-top: 30px !important;
+    padding-left: 70px;
+  }
+
+  .profile-card-container {
+    margin-top: 20px !important;
+  }
+
+  .add-button {
+    background: #0B70A524; 
+    color: #0B70A5; 
+    width: 57px; 
+    height: 26px;
+    border-radius: 13px;
+    margin-left: -25px!important;
+  }
+}
+

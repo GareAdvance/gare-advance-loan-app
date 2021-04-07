@@ -1,0 +1,64 @@
+
+.payment-container {
+  background: url("../../../assets//background2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+  width: 100%;
+  padding-top: 10%;
+}
+
+.input-container {
+  background: #fff;
+  left: 7px;
+  width: 320px;
+  padding: 40px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  border-radius: 6px;
+  /* margin-top: 10%; */
+  margin-left: 20px;
+  margin-bottom: 10%;
+  box-shadow: 20px 20px 50px #00000029 !important;
+  opacity: 1;
+}
+
+.input-container button:not(:disabled) {
+  cursor: pointer;
+  background: #E87C23;
+  color: #fff;
+  border: none;
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  margin-top: 20px; 
+}
+
+.data-container input {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 490px) {
+  .input-container {
+    background: #fff;
+    left: 7px;
+    width: 200px !important;
+    padding: 30px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    border-radius: 6px;
+    margin-top: 10%;
+    margin-left: -10px !important;
+    margin-bottom: 10%;
+    box-shadow: 20px 20px 50px #00000029 !important;
+    opacity: 1;
+  }
+
+  .input-container h3 {
+    font-size: 20px;
+  }
+}
