@@ -1,4 +1,5 @@
 const axios = require("axios");
+const key = require("../config/key");
 
 // Checks credit score with credit registry
 exports.checkScore = async (data) => {
@@ -16,7 +17,7 @@ exports.checkScore = async (data) => {
     "EnquiryLoanAmount": 0,
   }
   try {
-    const response = await axios.post(`https://api2.creditregistry.com/nigeria/AutoCred/v7/api/SMARTScore3/GetScore`, options);
+    const response = await axios.post(`${key.credit_reg_base_url}/SMARTScore3/GetScore`, options);
     
     return response.data;
   } catch (error) {
@@ -34,7 +35,7 @@ exports.creditPerforming = async (data) => {
       "EnquiryLoanAmount": 0
     }
 
-    const response = await axios.post(`https://api2.creditregistry.com/nigeria/AutoCred/v7/api/SMARTScore3/IsPerforming`, config);
+    const response = await axios.post(`${key.credit_reg_base_url}/SMARTScore3/IsPerforming`, config);
 
     return response.data;
 
@@ -52,7 +53,7 @@ exports.verifyCRBVN = async (data) => {
       "SessionCode": data.sessionCode, 
       "BVN": data.BVN
     }
-    const bvnData = await axios.post(`https://api2.creditregistry.com/nigeria/AutoCred/v7/api/Customers/FindByBVN2`, config);
+    const bvnData = await axios.post(`${key.credit_reg_base_url}/Customers/FindByBVN2`, config);
 
     if (!bvnData) return res.status(400).json({ error: "BVN validation failed" });
 

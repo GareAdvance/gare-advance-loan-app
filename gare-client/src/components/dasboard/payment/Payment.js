@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRavePayment } from "react-ravepayment";
 import { Col, Input, Row } from "reactstrap";
+import { key } from "../../../helper/key";
 import "./Payment.css";
  
 const Payment = () => {
@@ -11,7 +12,7 @@ const Payment = () => {
   const { amount, email, phone } = values;
 
   useEffect(() => {
-    setPubKey(process.env.REACT_APP_FLW_PUB_KEY);
+    setPubKey(key.flw_pub_key);
   }, []);
   
   const config = {
@@ -20,7 +21,7 @@ const Payment = () => {
     customer_phone: phone,
     amount: amount,
     PBFPubKey: pubKey && pubKey,
-    production: false,
+    production: true,
   };
 
   const { initializePayment } = useRavePayment(config);

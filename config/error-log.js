@@ -1,13 +1,14 @@
 const winston = require('winston');
+const key = require('./key');
 require('winston-mongodb');
 require("dotenv");
 
 let db_url;
 const env = process.env.NODE_ENV || 'development';
 if (env === "development") {
-  db_url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@ticket.6z9ee.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+  db_url = `mongodb+srv://${key.mongouser}:${key.mongopassword}@ticket.6z9ee.mongodb.net/${key.mongodb}?retryWrites=true&w=majority`;
 } else {
-  db_url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@ticket.6z9ee.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+  db_url = `mongodb+srv://${key.mongouser}:${key.mongopassword}@ticket.6z9ee.mongodb.net/${key.mongodb}?retryWrites=true&w=majority`;
 }
 
 module.exports = function () {

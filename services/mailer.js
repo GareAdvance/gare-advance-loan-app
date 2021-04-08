@@ -1,4 +1,5 @@
 const sgMail = require('@sendgrid/mail');
+const key = require("../config/key");
 // const fs = require("fs");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -16,7 +17,7 @@ exports.mailer = async (data, res) => {
   // console.log(pathToAttachment, attachment, " the file and path")
   const msg = {
     to: data.to,
-    from: process.env.EMAIL_SENDER, // Use the email address or domain you verified on sendgrid account
+    from: key.sendgrid_email, // Use the email address or domain you verified on sendgrid account
     subject: data.subject,
     text: data.text,
     html: data.html, //`<p>Just the html text</p>`,

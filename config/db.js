@@ -1,13 +1,16 @@
 const mongoose = require( "mongoose" );
 const winston = require( "winston" );
 require( "dotenv" ).config();
+const key = require("../config/key")
 
 let db_url;
 const env = process.env.NODE_ENV || 'development';
 if ( env === "development" ) {
-  db_url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@ticket.6z9ee.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+  // Create a mongodb atlas account and replace the url with the one here.
+  db_url = `mongodb+srv://${key.mongouser}:${key.mongopassword}@ticket.6z9ee.mongodb.net/${key.mongodb}?retryWrites=true&w=majority`;
 } else {
-  db_url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@ticket.6z9ee.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+  // Create a mongodb atlas account and replace the url with the one here.
+  db_url = `mongodb+srv://${key.mongouser}:${key.mongopassword}@ticket.6z9ee.mongodb.net/${key.mongodb}?retryWrites=true&w=majority`;
 }
 
 module.exports = () => {

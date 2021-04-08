@@ -1,5 +1,6 @@
 const sgMail = require('@sendgrid/mail');
 const { template } = require('./template');
+const key = require("../config/key");
 // const fs = require("fs");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -7,7 +8,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 exports.loan_mailer = async (data, res) => {
 
   const msg = {
-    to: "bookings@gareadvancefinancial.com",//"onojamatthew59@gmail.com",//"bookings@gareadvancefinancial.com",
+    to: key.gare_bookings_email,//"onojamatthew59@gmail.com",//,
     from: process.env.SENDER_EMAIL, // Use the email address or domain you verified on sendgrid account
     subject: data.subject,
     text: data.text,

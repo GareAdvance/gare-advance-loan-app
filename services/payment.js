@@ -1,12 +1,11 @@
 require("dotenv").config();
 const Ravepay = require('flutterwave-node');
-const fetch = require("node-fetch");
+const key = require("../config/key");
 
-const PUBLICK_KEY = process.env.FLW_PUB_KEY;
-const SECRET_KEY = process.env.FLW_SEC_KEY;
+const PUBLICK_KEY = key.flw_pub_key;
+const SECRET_KEY = key.flw_sec_key;
 
 const rave = new Ravepay(PUBLICK_KEY, SECRET_KEY,  false);
-let refIdNumber;
 
 // This handles fund transfers to customer accounts
 exports.transfer = async (res) => {
@@ -32,7 +31,7 @@ exports.transfer = async (res) => {
 // BVN verification
 exports.verifyBVN = async (data) => {
   const payload = {
-    bvn: "12345678901", //data.bvn
+    bvn: data.bvn, //data.bvn
   }
 
   try {
@@ -42,104 +41,6 @@ exports.verifyBVN = async (data) => {
     console.log(error)
   }      
 }
-
-
-exports.chargeCard = async (res) => {
-  // const { amount, firstName, lastName, email, phone, cvv, expMonth, expYear, cardNo, pin, currencyType, ip, fingerPrint } = req.body;
-  // newAmount = amount;
-  // const { customerId, role } = req.params;
-  // if (!customerId) return res.status(400).json({ error: "Please log in and try again" });
-  // if (!roles.includes(role)) return res.status(400).json({ error: "Only customer can call this api" });
-  // const metavalue = Math.floor(1000000 + Math.random() * 900000);
-
-  const payload = {
-    "cardno": "5531886652142950", //cardNo,
-    "cvv": "564",//cvv,
-    "expirymonth": "09",// expMonth,
-    "expiryyear": "32",//expYear,
-    "currency": "NGN",// currencyType,
-    "pin": "3310",//pin,
-    "country": "NG",
-    "amount": "2000", //amount,
-    "email": "user@gmail.com", //email,
-    "phonenumber": "09025930109",//phone,
-    "suggested_auth": "PIN",
-    "firstname": "temi",//firstName,
-    "lastname": "desola", //lastName,
-    "IP": "41.184.46.31",
-    "txRef": "DC-" + Date.now(),
-    "device_fingerprint": "69e6b7f0b72037aa8428b70fbe03986c"
-  };
-  
-    rave.Card.charge(payload).then(async (resp) => {
-      let 
-          ref,
-          errorMessage;
-  
-        if (resp.body && resp.body.data && resp.body.data.flwRef) {
-          
-          ref = resp.body.data.flwRef;
-          refIdNumber = ref;
-          res.json({ message: "OTP sent"});
-        } 
-        else {
-          errorMessage = new Error(`Could not get response. Check your network!`);
-          throw errorMessage;
-        }
-        
-      }).catch(err => {
-        return res.json(`Error: Could not get Transaction-REF, ${err}`);
-    });
-}
-
-// Verify payment OTP
-exports.verifyOTP = (req, res) => {
-
-  const token = req.body.otp;
-  console.log(refIdNumber, "transaction ref number")
-  const payload2 = {
-    "PBFPubKey": process.env.PUBLICK_KEY,
-    "transaction_reference": refIdNumber,
-    "otp": token
-  }
-
-  rave.Card.validate(payload2).then(resp => {
-    if (resp.body.status === "success" && resp.body.message == "Charge Complete") {
-      let payload3 = {
-        "flwref": refIdNumber
-      }
-      rave.Status.requery(payload3)
-        .then(resp => {
-          //after validation, do a check if transaction is complete
-          if (resp.body.status === "success") {
-            return res.json({ status: resp.body.status, message: "Payment completed" });
-            // Customer.findByIdAndUpdate({ _id: customerId})
-            //   .then(customer => {
-            //     if (!customer) return res.status(400).json({ error: "Customer not found" });
-            //     customer.balance += newAmount;
-            //     customer.save((err, doc) => {
-            //       if (err || !doc) return res.status(400).json({ error: err.message });
-            //       let amount = newAmount;
-            //       let newTxn = new Transaction({ amount, txnType, txnTitle, customerId, role });
-            //       return newTxn.save((err, doc) => {
-            //         if (err || !doc) return res.status(400).json({ error: err.message });
-            //         res.json({ message: "Payment complete", newTxn });
-            //       });
-            //     });
-            //   })
-            //   .catch(err => {
-            //     return res.status(400).json({ error: err.message });
-            //   });
-          }
-        })
-        .catch(err => {
-          res.status(400).json({ error: err.message });
-        });
-    }
-  }).catch(err => {
-      return res.json(`Error: Could not validate Transaction ${err}`);
-  });
-} 
 
 // gets list of banks in Nigeria
 exports.getBanks = async () => {
