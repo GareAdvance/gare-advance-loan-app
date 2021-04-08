@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import { localStorageAuth } from "../../../helper/authenticate";
+import { key } from "../../../helper/key";
 
 export const PERSONAL_INFO_START = "PERSONAL_INFO_START";
 export const PERSONAL_INFO_SUCCESS = "PERSONAL_INFO_SUCCESS";
@@ -33,7 +34,7 @@ export const UPLOAD_PROFILE_PICTURE_START = "UPLOAD_PROFILE_PICTURE_START";
 export const UPLOAD_PROFILE_PICTURE_SUCCESS = "UPLOAD_PROFILE_PICTURE_SUCCESS";
 export const UPLOAD_PROFILE_PICTURE_FAILED = "UPLOAD_PROFILE_PICTURE_FAILED";
 
-const BASE_URL = process.env.REACT_APP_API_URL;
+// const BASE_URL = process.env.REACT_APP_API_URL;
 const token = localStorageAuth() && localStorageAuth().token;
 
 // updates personal information
@@ -62,7 +63,7 @@ export const personalInfo = (data) => {
   const myData = { userId }
   return dispatch => {
     dispatch(personalInfoStart());
-    fetch(`${BASE_URL}/user/details`, {
+    fetch(`${key.baseUrl}/user/details`, {
       method: "PUT",
       headers: {
         ACCEPT: "application/json",
@@ -111,7 +112,7 @@ export const bankInfo = (data) => {
   const myData = { userId }
   return dispatch => {
     dispatch(bankInfoStart());
-    fetch(`${BASE_URL}/bank/create`, {
+    fetch(`${key.baseUrl}/bank/create`, {
       method: "POST",
       headers: {
         ACCEPT: "application/json",
@@ -155,7 +156,7 @@ export const getBanksFailed = (error) => {
 export const getBanks = () => {
   return dispatch => {
     dispatch(getBanksStart());
-    fetch(`${BASE_URL}/bank/all`, {
+    fetch(`${key.baseUrl}/bank/all`, {
       method: "GET",
       headers: {
        ACCEPT: "application/json",
@@ -198,7 +199,7 @@ export const employmentInformation = (data) => {
   const myData = { userId: data.userId }
   return dispatch => {
     dispatch(employmentInfoStart());
-    fetch(`${BASE_URL}/employment/create`, {
+    fetch(`${key.baseUrl}/employment/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -246,7 +247,7 @@ export const bvnInformation = (data) => {
 
   return dispatch => {
     dispatch(bvnStart());
-    fetch(`${BASE_URL}/bvn/new`, {
+    fetch(`${key.baseUrl}/bvn/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -292,7 +293,7 @@ export const getUserFailed = (error) => {
 export const getUser = (data) => {
   return dispatch => {
     dispatch(getUserStart());
-    fetch(`${BASE_URL}/user`, {
+    fetch(`${key.baseUrl}/user`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -335,7 +336,7 @@ export const getUsersFailed = (error) => {
 export const getUsers = (data) => {
   return dispatch => {
     dispatch(getUsersStart());
-    fetch(`${BASE_URL}/user`, {
+    fetch(`${key.baseUrl}/user`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -378,7 +379,7 @@ export const profilePictureFailed = (error) => {
 export const photoUpload = (data) => {
   return dispatch => {
     dispatch(profilePictureStart());
-    fetch(`${BASE_URL}/user/uploader`, {
+    fetch(`${key.baseUrl}/user/uploader`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
