@@ -25,7 +25,7 @@ First install all dependencies by:
 then, `npm start` or `yarn start`
 
 ## Adding environment variables to the client application
-Create a .env file in the root directory of `gare-client` folder
+Create a `.env` file in the root directory of `gare-client` folder
 The environment variable names can be found in `key.js` file inside the helper folder right inside `gare-client` folder
 
 After the variables have been set, run the React Application using `npm start` or `yarn start`
