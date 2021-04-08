@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import { localStorageAuth } from "../../../helper/authenticate";
+import { key } from "../../../helper/key";
 
 export const POST_LOAN_START = "POST_LOAN_START";
 export const POST_LOAN_SUCCESS = "POST_LOAN_SUCCESS";
@@ -33,7 +34,6 @@ export const BOOKINGS_LOAN_START = "BOOKINGS_LOAN_START";
 export const BOOKINGS_LOAN_SUCCESS = "BOOKINGS_LOAN_SUCCESS";
 export const BOOKINGS_LOAN_FAILED = "BOOKINGS_LOAN_FAILED";
 
-const BASE_URL = process.env.REACT_APP_API_URL;
 
 export const postLoanStart = () => {
   return {
@@ -58,7 +58,7 @@ export const postLoanFailed = (error) => {
 export const postLoan = (data) => {
   return dispatch => {
     dispatch(postLoanStart());
-    fetch(`${BASE_URL}/loan/personal`, {
+    fetch(`${key.baseUrl}/loan/personal`, {
       method: "POST",
       headers: {
         ACCEPT: "application/json",
@@ -105,7 +105,7 @@ export const getLoanFailed = (error) => {
 export const getLoans = () => {
   return dispatch => {
     dispatch(getLoanStart());
-    fetch(`${BASE_URL}/loan/all`, {
+    fetch(`${key.baseUrl}/loan/all`, {
       method: "GET",
       headers: {
         ACCEPT: "application/json",
@@ -148,7 +148,7 @@ export const fetchPersonalLoanFailed = (error) => {
 export const fetchPersonalLoan = (data) => {
   return dispatch => {
     dispatch(fetchPersonalLoanStart());
-    fetch(`${BASE_URL}/loan/me?category=${data.category}&page=${data.page}`, {
+    fetch(`${key.baseUrl}/loan/me?category=${data.category}&page=${data.page}`, {
       method: "GET",
       headers: {
         ACCEPT: "application/json",
@@ -190,7 +190,7 @@ export const businessLoanFailed = (error) => {
 export const businessLoan = (data) => {
   return dispatch => {
     dispatch(businessLoanStart());
-    fetch(`${BASE_URL}/loan/business`, {
+    fetch(`${key.baseUrl}/loan/business`, {
       method: "POST",
       headers: {
         ACCEPT: "application/json",
@@ -232,7 +232,7 @@ export const fetchBusinessFailed = (error) => {
 export const fetchBusinessLoan = (data) => {
   return dispatch => {
     dispatch(fetchBusinessStart());
-    fetch(`${BASE_URL}/loan/me?category=${data.category}&page=${data.page}`, {
+    fetch(`${key.baseUrl}/loan/me?category=${data.category}&page=${data.page}`, {
       method: "GET",
       headers: {
         ACCEPT: "application/json",
@@ -274,7 +274,7 @@ export const fetchSalaryLoanFailed = (error) => {
 export const fetchSalaryLoan = (data) => {
   return dispatch => {
     dispatch(fetchSalaryLoanStart());
-    fetch(`${BASE_URL}/loan/me?category=${data.category}&page=${data.page}`, {
+    fetch(`${key.baseUrl}/loan/me?category=${data.category}&page=${data.page}`, {
       method: "GET",
       headers: {
         ACCEPT: "application/json",
@@ -316,7 +316,7 @@ export const postSalaryFailed = (error) => {
 export const salaryLoan = (data) => {
   return dispatch => {
     dispatch(postSalaryStart());
-    fetch(`${BASE_URL}/loan/salary`, {
+    fetch(`${key.baseUrl}/loan/salary`, {
       method: "POST",
       headers: {
         ACCEPT: "application/json",
@@ -359,7 +359,7 @@ export const postBookingLoanFailed = (error) => {
 export const postBookingLoan = (data) => {
   return dispatch => {
     dispatch(postBookingLoanStart());
-    fetch(`${BASE_URL}/gare_bookings/loan`, {
+    fetch(`${key.baseUrl}/gare_bookings/loan`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

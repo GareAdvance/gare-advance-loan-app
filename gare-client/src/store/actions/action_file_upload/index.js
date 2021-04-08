@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { key } from "../../../helper/key";
 
 export const UPLOAD_PROFILE_PICTURE_START = "UPLOAD_PROFILE_PICTURE_START";
 export const UPLOAD_PROFILE_PICTURE_SUCCESS = "UPLOAD_PROFILE_PICTURE_SUCCESS";
@@ -7,8 +8,6 @@ export const UPLOAD_PROFILE_PICTURE_FAILED = "UPLOAD_PROFILE_PICTURE_FAILED";
 export const UPLOAD_START = "UPLOAD_START";
 export const UPLOAD_SUCCESS = "UPLOAD_SUCCESS";
 export const UPLOAD_FAILED = "UPLOAD_FAILED";
-
-const BASE_URL = process.env.REACT_APP_UPLOAD_URL;
 
 export const uploadStart = () => {
   return {
@@ -33,7 +32,7 @@ export const uploadFailed = (error) => {
 export const uploader = (options) => {
   return dispatch => {
     dispatch(uploadStart());
-    fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_NAME}/image/upload`, options)
+    fetch(`https://api.cloudinary.com/v1_1/${key.cloudinaryName}/image/upload`, options)
     .then(response => response.json())
     .then(resp => {
       dispatch(uploadSuccess(resp));
@@ -74,7 +73,7 @@ export const profilePicture = (data) => {
   }
   return dispatch => {
     dispatch(profilePictureStart());
-    fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_NAME}/image/upload`, config)
+    fetch(`https://api.cloudinary.com/v1_1/${key.cloudinaryName}/image/upload`, config)
       .then(response => response.json())
       .then(resp => {
         dispatch(profilePictureSuccess(resp));

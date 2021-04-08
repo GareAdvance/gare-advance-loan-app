@@ -1,4 +1,5 @@
 import Auth from "../../../helper/LocalStorageAuth";
+import { key } from "../../../helper/key";
 
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
@@ -23,9 +24,6 @@ export const CREDIT_LOGIN_START = "CREDIT_LOGIN_START";
 export const CREDIT_LOGIN_SUCCESS = "CREDIT_LOGIN_SUCCESS";
 export const CREDIT_LOGIN_FAILED = "CREDIT_LOGIN_FAILED";
 
-const BASE_URL = process.env.REACT_APP_API_URL; // "https://gareadvance.herokuapp.com/api/v1" 
-
-
 export const signupStart = () => {
   return {
     type: SIGNUP_START
@@ -49,7 +47,7 @@ export const signupFailed = (error) => {
 export const signup = (data) => {
   return dispatch => {
     dispatch(signupStart());
-    fetch(`${BASE_URL}/signup`, {
+    fetch(`${key.baseUrl}/signup`, {
       method: "POST",
       headers: {
         ACCEPT: "application/json",
@@ -91,7 +89,7 @@ export const signinFailed = (error) => {
 export const signin = (data, userType) => {
   return dispatch => {
     dispatch(signinStart());
-    fetch(`${BASE_URL}/login/${userType}`, {
+    fetch(`${key.baseUrl}/login/${userType}`, {
       method: "POST",
       headers: {
         ACCEPT: "application/json",
@@ -134,7 +132,7 @@ export const forgotPasswordFailed = (error) => {
 export const forgotPassword = (data, userType) => {
   return dispatch => {
     dispatch(forgotPasswordStart());
-    fetch(`${BASE_URL}/forgot_password/${userType}`, {
+    fetch(`${key.baseUrl}/forgot_password/${userType}`, {
       method: "PUT",
       headers: {
         ACCEPT: "application/json",
@@ -176,7 +174,7 @@ export const resetPasswordFailed = (error) => {
 export const resetPassword = (data, userType) => {
   return dispatch => {
     dispatch(resetPasswordStart());
-    fetch(`${BASE_URL}/reset_password/${userType}`, {
+    fetch(`${key.baseUrl}/reset_password/${userType}`, {
       method: "PUT",
       headers: {
         ACCEPT: "application/json",
@@ -218,7 +216,7 @@ export const verifyEmailFailed = (error) => {
 export const verifyEmail = (data) => {
   return dispatch => {
     dispatch(verifyEmailStart());
-    fetch(`${BASE_URL}/user/verify_email`, {
+    fetch(`${key.baseUrl}/user/verify_email`, {
       method: "put",
       headers: {
         ACCEPT: "application/json",
@@ -261,7 +259,7 @@ export const changePasswordFailed = (error) => {
 export const changePassword = (data) => {
   return dispatch => {
     dispatch(changePasswordStart());
-    fetch(`${BASE_URL}/user/change_password`, {
+    fetch(`${key.baseUrl}/user/change_password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -303,7 +301,7 @@ export const creditLoginFailed = (error) => {
 export const creditLogin = () => {
   return dispatch => {
     dispatch(creditLoginStart());
-    fetch(`${BASE_URL}/credit/login`, {
+    fetch(`${key.baseUrl}/credit/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
